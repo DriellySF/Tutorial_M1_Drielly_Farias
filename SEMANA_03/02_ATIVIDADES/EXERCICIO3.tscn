@@ -18,4 +18,12 @@ margin_top = 137.0
 margin_right = 699.0
 margin_bottom = 236.0
 
+[node name="Button2" type="Button" parent="."]
+margin_left = 34.0
+margin_top = 33.0
+margin_right = 214.0
+margin_bottom = 102.0
+text = "VOLTAR"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

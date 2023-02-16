@@ -9,7 +9,7 @@ func _on_Button_pressed():
 	dado1=$dado1.text
 	dado2=$dado2.text
 	dado3=$dado3.text
-	var lista = [dado1, dado2, dado3]
+	lista = [dado1, dado2, dado3]
 	
 	$resposta.text = String(lista)
 
