@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://imagens/5532919.jpg" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cena1.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29, 30 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.5, 30.5 )
+
+[sub_resource type="BitmapFont" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_vertical_guides_": [ -141.0 ]
+}
+
+[node name="5532919" type="Sprite" parent="."]
+position = Vector2( 494, 618 )
+texture = ExtResource( 2 )
+
+[node name="Control" parent="." instance=ExtResource( 4 )]
+margin_left = 11.0
+margin_top = 7.0
+margin_right = 11.0
+margin_bottom = 7.0
+
+[node name="Button100" type="Button" parent="."]
+margin_left = 19.0
+margin_top = 62.0
+margin_right = 70.0
+margin_bottom = 100.0
+text = "100"
+
+[node name="Button50" type="Button" parent="."]
+margin_left = 78.0
+margin_top = 63.0
+margin_right = 129.0
+margin_bottom = 101.0
+text = "50"
+
+[node name="Button0" type="Button" parent="."]
+margin_left = 139.0
+margin_top = 63.0
+margin_right = 190.0
+margin_bottom = 101.0
+text = "0"
+
+[node name="ButtonA" type="Button" parent="."]
+margin_left = 19.0
+margin_top = 114.0
+margin_right = 70.0
+margin_bottom = 152.0
+text = "Auto"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+margin_left = 149.0
+margin_top = 234.0
+margin_right = 849.0
+margin_bottom = 407.0
+text = "Um Label
+"
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Icon" type="Sprite" parent="YSort"]
+position = Vector2( 282, 311 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="Area2D" parent="YSort/Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Icon/StaticBody2D"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 680, 134 )
+scale = Vector2( 1.2109, 1.12261 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Icon" type="Sprite" parent="YSort/KinematicBody2D"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/KinematicBody2D"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 1 )
+
+[node name="Balao" type="RichTextLabel" parent="."]
+margin_left = 170.0
+margin_top = 184.0
+margin_right = 365.0
+margin_bottom = 236.0
+custom_colors/font_color_selected = Color( 0.129412, 0.0784314, 0.0235294, 1 )
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+text = "Oi tudo bem?"
+
+[connection signal="pressed" from="Button100" to="." method="_on_Button100_pressed"]
+[connection signal="pressed" from="Button50" to="." method="_on_Button50_pressed"]
+[connection signal="pressed" from="Button0" to="." method="_on_Button0_pressed"]
+[connection signal="pressed" from="ButtonA" to="." method="_on_ButtonA_pressed"]
+[connection signal="body_entered" from="YSort/Icon/StaticBody2D" to="." method="_on_StaticBody2D_body_entered"]
+[connection signal="body_exited" from="YSort/Icon/StaticBody2D" to="." method="_on_StaticBody2D_body_exited"]
+[connection signal="input_event" from="YSort/KinematicBody2D" to="." method="_on_KinematicBody2D_input_event"]
