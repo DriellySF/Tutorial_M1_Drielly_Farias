@@ -13,35 +13,35 @@ margin_bottom = 307.0
 text = "Nome"
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 414.0
+margin_left = 428.0
 margin_top = 226.0
-margin_right = 626.0
+margin_right = 640.0
 margin_bottom = 306.0
 text = "Lista"
 
 [node name="Button3" type="Button" parent="."]
-margin_left = 720.0
-margin_top = 228.0
-margin_right = 932.0
-margin_bottom = 308.0
+margin_left = 760.0
+margin_top = 232.0
+margin_right = 972.0
+margin_bottom = 312.0
 
 [node name="Label" type="Label" parent="."]
-margin_left = 183.0
-margin_top = 361.0
-margin_right = 422.0
-margin_bottom = 419.0
+margin_left = 424.0
+margin_top = 354.0
+margin_right = 959.0
+margin_bottom = 426.0
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 624.0
-margin_top = 369.0
-margin_right = 865.0
-margin_bottom = 431.0
+margin_left = 411.0
+margin_top = 423.0
+margin_right = 923.0
+margin_bottom = 557.0
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 368.0
-margin_top = 34.0
-margin_right = 662.0
-margin_bottom = 185.0
+margin_left = 393.0
+margin_top = 33.0
+margin_right = 687.0
+margin_bottom = 184.0
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

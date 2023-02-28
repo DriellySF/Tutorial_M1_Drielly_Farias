@@ -1,6 +1,6 @@
 extends Node2D
 var teste = false
-var valor = 0 
+#var valor = 0 não é utilizada
 var numero = 0 #variável com acento no nome (número-> numero)
 var lista = [] # não estava declarada
 var nome #não estava declarada
