@@ -32,5 +32,5 @@ func _on_Button3_pressed():
 			cont+=1
 		if(cont!=0):
 			nome += String(nome) + "baldo \n" #não tinha a função String()
-		i+= 1
+		i+= 1 #serve para parar o loop
 		$Label2.text = nome
