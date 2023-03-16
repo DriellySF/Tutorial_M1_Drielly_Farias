@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://yt_assets/wall_roof.png" type="Texture" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Main.gd" type="Script" id=5]
+[ext_resource path="res://yt_assets/player.png" type="Texture" id=6]
+[ext_resource path="res://Player2.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 58.5, 10 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
@@ -31,8 +35,21 @@ texture = ExtResource( 2 )
 position = Vector2( 515, 11 )
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 630, 560 )
-
 [node name="Ball" parent="." instance=ExtResource( 4 )]
 position = Vector2( 578, 497 )
+
+[node name="Player2" type="KinematicBody2D" parent="."]
+position = Vector2( 595, 549 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player2"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="Player2"]
